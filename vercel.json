@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/links", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/links", "destination": "/index.html" },
+    { "source": "/lista", "destination": "/rotina-que-rende.html" }
+  ]
+}
