@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria Clara Almeida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Caveat:wght@600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #f8ecdd;
+    --cream-soft: #fbf3e8;
+    --sage: #8b9574;
+    --sage-dark: #6d7859;
+    --sage-deep: #545e42;
+    --ink: #2b2924;
+    --rust: #b1652f;
+    --white: #ffffff;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  body{
+    background: radial-gradient(circle at 50% 0%, var(--cream-soft), var(--cream) 60%);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 56px 20px 40px;
+  }
+
+  .page{
+    width: 100%;
+    max-width: 440px;
+  }
+
+  /* Perfil */
+  .profile{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .avatar{
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 22%;
+    border: 4px solid var(--white);
+    outline: 2px solid var(--sage);
+    outline-offset: 3px;
+    box-shadow: 0 10px 24px rgba(84, 94, 66, 0.18);
+    margin-bottom: 18px;
+  }
+
+  .profile h1{
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .profile .role{
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--sage-dark);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .profile .handle{
+    font-size: 13.5px;
+    color: var(--ink);
+    opacity: 0.55;
+    font-weight: 500;
+  }
+
+  /* Cards */
+  .links{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .link-card{
+    position: relative;
+    display: block;
+    border-radius: 22px;
+    overflow: hidden;
+    height: 210px;
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(43, 41, 36, 0.14);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .link-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(43, 41, 36, 0.2);
+  }
+
+  .link-card img.bg{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+  }
+
+  .link-card .overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(43,41,36,0.05) 0%, rgba(43,41,36,0.35) 55%, rgba(43,41,36,0.82) 100%);
+  }
+
+  .link-card.solid{
+    background: linear-gradient(150deg, var(--sage) 0%, var(--sage-deep) 100%);
+  }
+
+  .link-card.solid .overlay{
+    background: linear-gradient(180deg, rgba(43,41,36,0) 0%, rgba(43,41,36,0.28) 100%);
+  }
+
+  .card-content{
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 22px 22px 20px;
+    color: var(--white);
+  }
+
+  .card-content .eyebrow{
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cream);
+    opacity: 0.95;
+    margin-bottom: 2px;
+  }
+
+  .card-content h2{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .card-content p{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+    opacity: 0.92;
+    max-width: 88%;
+    margin-bottom: 14px;
+  }
+
+  .cta{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--sage-deep);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border-radius: 999px;
+  }
+
+  .cta svg{ width: 12px; height: 12px; }
+
+  /* Badge dentro do card sage */
+  .badge{
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--white);
+    opacity: 0.9;
+  }
+
+  /* Rodapé */
+  footer{
+    text-align: center;
+    margin-top: 44px;
+    font-size: 12px;
+    color: var(--ink);
+    opacity: 0.5;
+  }
+
+  footer a{
+    color: var(--sage-dark);
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  footer a:hover{ text-decoration: underline; }
+
+  @media (max-width: 380px){
+    .link-card{ height: 190px; }
+    .card-content h2{ font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="profile">
+    <img class="avatar" src="DSC_3429-Editar.jpg" alt="Maria Clara Almeida">
+    <h1>Maria Clara Almeida</h1>
+    <div class="role">Criadora de Conteúdo Digital</div>
+    <div class="handle">@ma.claraalmeida</div>
+  </div>
+
+  <div class="links">
+
+    <a class="link-card" href="https://maclaraalmeida.my.canva.site/portf-lio-ugc-2-semestre" target="_blank" rel="noopener">
+      <img class="bg" src="DSC_3056-Editar.jpg" alt="" style="object-position: center 35%;">
+      <div class="overlay"></div>
+      <div class="card-content">
+        <h2>Mídia Kit</h2>
+        <p>Portfólio de parcerias e conteúdo autoral</p>
+        <span class="cta">
+          Ver portfólio
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="link-card solid" href="https://pay.kiwify.com.br/Ba79EZv" target="_blank" rel="noopener">
+      <div class="overlay"></div>
+      <span class="badge">✦ Rotina que Vende</span>
+      <div class="card-content">
+        <div class="eyebrow">Crie conteúdo. Atraia marcas. Gere renda.</div>
+        <h2>Rotina que Vende</h2>
+        <p>O curso que te ensina a transformar sua rotina em renda com marcas</p>
+        <span class="cta">
+          Quero o curso
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="link-card" href="https://www.maclaraalmeida.com.br/aula" target="_blank" rel="noopener">
+      <img class="bg" src="DSC_3113-Editar.jpg" alt="">
+      <div class="overlay"></div>
+      <div class="card-content">
+        <div class="eyebrow">Lista de espera</div>
+        <h2>Rotina que Rende</h2>
+        <p>Seja avisada em primeira mão quando as vagas abrirem</p>
+        <span class="cta">
+          Entrar na lista
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    Feito com ❤️ por <a href="https://instagram.com/vivienvital" target="_blank" rel="noopener">vivienvital</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
