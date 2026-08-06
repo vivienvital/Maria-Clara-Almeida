@@ -16,6 +16,7 @@
     --sage-deep: #545e42;
     --ink: #2b2924;
     --rust: #b1652f;
+    --rust-deep: #8a4c22;
     --white: #ffffff;
   }
 
@@ -123,6 +124,10 @@
 
   .link-card.solid .overlay{
     background: linear-gradient(180deg, rgba(43,41,36,0) 0%, rgba(43,41,36,0.28) 100%);
+  }
+
+  .link-card.solid.rust{
+    background: linear-gradient(150deg, var(--rust) 0%, var(--rust-deep) 100%);
   }
 
   .card-content{
@@ -278,6 +283,20 @@
   </div>
 
   <div class="links">
+
+    <a class="link-card solid rust" href="https://chat.whatsapp.com/GlMPcyfds477QJOUtEPGJC" target="_blank" rel="noopener">
+      <div class="overlay"></div>
+      <span class="badge">💬 Grupo no WhatsApp</span>
+      <div class="card-content">
+        <div class="eyebrow">Achados, dicas e novidades em primeira mão</div>
+        <h2>Grupo Achados da Maria Clara</h2>
+        <p>Entre pro grupo do WhatsApp e receba indicações direto comigo</p>
+        <span class="cta">
+          Entrar no grupo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </a>
 
     <a class="link-card" href="https://maclaraalmeida.my.canva.site/portf-lio-ugc-2-semestre" target="_blank" rel="noopener">
       <img class="bg" src="DSC_3056-Editar.jpg" alt="" style="object-position: center 35%;">
