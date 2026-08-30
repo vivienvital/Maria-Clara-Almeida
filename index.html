@@ -89,10 +89,12 @@
 
   .link-card{
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     border-radius: 22px;
     overflow: hidden;
-    height: 210px;
+    min-height: 210px;
     text-decoration: none;
     box-shadow: 0 14px 30px rgba(43, 41, 36, 0.14);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -131,8 +133,8 @@
   }
 
   .card-content{
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
+    position: relative;
+    z-index: 1;
     padding: 22px 22px 20px;
     color: var(--white);
   }
@@ -181,9 +183,10 @@
 
   /* Badge dentro do card sage */
   .badge{
-    position: absolute;
-    top: 20px;
-    left: 22px;
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
+    margin: 20px 22px auto;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -217,7 +220,7 @@
   footer a:hover{ text-decoration: underline; }
 
   @media (max-width: 380px){
-    .link-card{ height: 190px; }
+    .link-card{ min-height: 190px; }
     .card-content h2{ font-size: 21px; }
   }
 
