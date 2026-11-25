@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maria-clara-almeida",
+  "account_id": "ad0acfa8d8d0b8ca5cb14514660e52e1",
+  "compatibility_date": "2026-11-01",
+  // Monta dist/ reproduzindo as regras do antigo vercel.json:
+  //   /       -> redireciona pra /links
+  //   /links  -> página de links (index.html)
+  //   /lista  -> rotina-que-rende.html
+  // O index.html NÃO vai na raiz de dist/, senão "/" serviria a página em vez de redirecionar.
+  "build": {
+    "command": "rm -rf dist && mkdir dist && cp *.jpg dist/ && cp index.html dist/links.html && cp rotina-que-rende.html dist/lista.html && printf '/ /links 302\\n' > dist/_redirects"
+  },
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
