@@ -3,6 +3,10 @@
   "name": "maria-clara-almeida",
   "account_id": "ad0acfa8d8d0b8ca5cb14514660e52e1",
   "compatibility_date": "2026-11-01",
+  "routes": [
+    { "pattern": "maclaraalmeida.com.br", "custom_domain": true },
+    { "pattern": "www.maclaraalmeida.com.br", "custom_domain": true }
+  ],
   // Monta dist/ reproduzindo as regras do antigo vercel.json:
   //   /       -> redireciona pra /links
   //   /links  -> página de links (index.html)
